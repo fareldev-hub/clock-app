@@ -80,10 +80,6 @@ Menampilkan jam di komputer pengguna secara realtime, juga zona waktunya.
 
 ---
 
-## 📸 Preview
-
-Masukkan screenshot tampilan aplikasi di sini agar lebih mudah dilihat pengguna.
-
 ---
 
 ## 📜 Lisensi
