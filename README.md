@@ -13,9 +13,6 @@ Aplikasi web sederhana berbasis **HTML, CSS & JavaScript** dengan fitur-fitur be
 
 ## 📂 Struktur Proyek
 
-```
-
-```
 clock-app/
 │
 ├── src/
