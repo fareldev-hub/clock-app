@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock App</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <h1>⏰ Clock App</h1>
+
+  <nav>
+    <button class="active" onclick="showContent('local', event)">Jam Lokal</button>
+    <button onclick="showContent('alarm', event)">Alarm</button>
+    <button onclick="showContent('stopwatch', event)">Stopwatch</button>
+    <button onclick="showContent('world', event)">Jam Dunia</button>
+  </nav>
+
+  <!-- Local Time -->
+  <div id="local" class="content" style="display:flex;">
+    <div class="card">
+      <h2>Jam Lokal</h2>
+      <div class="time" id="localTime">--:--:--</div>
+      <p id="timezone"></p>
+    </div>
+  </div>
+
+  <!-- Alarm -->
+  <div id="alarm" class="content">
+    <div class="card">
+      <h2>Alarm</h2>
+      <div>
+        <select id="alarmHour"></select> :
+        <select id="alarmMinute"></select>
+      </div>
+      <button onclick="setAlarm()">Set Alarm</button>
+      <p id="alarmStatus">Belum ada alarm</p>
+    </div>
+  </div>
+
+  <!-- Stopwatch -->
+  <div id="stopwatch" class="content">
+    <div class="card">
+      <h2>Stopwatch</h2>
+      <div class="time" id="stopwatchTime">00:00:00</div>
+      <button onclick="startStopwatch()">Start</button>
+      <button onclick="stopStopwatch()">Stop</button>
+      <button onclick="resetStopwatch()">Reset</button>
+    </div>
+  </div>
+
+  <!-- World Clock -->
+  <div id="world" class="content">
+    <div class="card">
+      <h2>Jam Dunia</h2>
+      <select id="citySelect" onchange="updateWorldClock()">
+        <option value="Asia/Jakarta">Jakarta</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+        <option value="Europe/London">London</option>
+        <option value="America/New_York">New York</option>
+        <option value="Australia/Sydney">Sydney</option>
+      </select>
+      <div class="time" id="worldClock">--:--:--</div>
+    </div>
+  </div>
+
+  <audio id="alarmSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+
+  <script src="src/script.js"></script>
+</body>
+</html>
