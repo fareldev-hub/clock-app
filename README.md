@@ -1,6 +1,6 @@
 Preview : https://fareldev-hub.github.io/clock-app/
 
-```markdown# Clock App
+Clock App
 
 Aplikasi web sederhana berbasis **HTML, CSS & JavaScript** dengan fitur-fitur berikut:
 
@@ -10,7 +10,7 @@ Aplikasi web sederhana berbasis **HTML, CSS & JavaScript** dengan fitur-fitur be
 - Jam dunia — pilih kota dan tampilkan waktu lokal kota tersebut  
 
 ---
-
+```markdown# 
 ## 📂 Struktur Proyek
 
 clock-app/
