@@ -23,8 +23,6 @@ clock-app/
 └── README.md
 ```
 
-````
-
 - `index.html` — file HTML utama  
 - `style.css` — styling & tampilan  
 - `script.js` — logika JavaScript untuk jam, alarm, stopwatch, jam dunia  
