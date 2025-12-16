@@ -512,6 +512,7 @@ button:active {
   background: linear-gradient(135deg, var(--neon-cyan), var(--primary-blue));
 }
 
+
 /* Loading animation for time updates */
 .time.updating {
   animation: time-update 0.6s ease-in-out;
@@ -521,4 +522,315 @@ button:active {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
+}
+
+/* ======================================
+   ALARM SECTION STYLES
+   ====================================== */
+
+/* Notification Permission Section */
+.notification-section {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.notification-section.allowed {
+  background: rgba(76, 175, 80, 0.1);
+  border-color: rgba(76, 175, 80, 0.3);
+}
+
+.notification-section.denied {
+  background: rgba(244, 67, 54, 0.1);
+  border-color: rgba(244, 67, 54, 0.3);
+}
+
+.permission-status {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.permission-status.allowed {
+  color: #4CAF50;
+}
+
+.permission-status.denied {
+  color: #f44336;
+}
+
+/* Set Alarm Section */
+.set-alarm-section {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.set-alarm-section h3 {
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.alarm-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.alarm-inputs input {
+  background: #000000;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  max-width: 180px;
+}
+
+.alarm-inputs input:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+.alarm-inputs input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.3),
+    inset 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+.add-alarm-btn {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  font-size: 0.9rem;
+  padding: 12px 24px;
+}
+
+.add-alarm-btn:hover {
+  background: linear-gradient(135deg, #66BB6A, #4CAF50);
+}
+
+/* Active Alarms Section */
+.active-alarms-section {
+  margin-top: 20px;
+}
+
+.active-alarms-section h3 {
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.alarms-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.alarms-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.alarms-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.alarms-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  border-radius: 3px;
+}
+
+.alarms-list::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--primary-blue));
+}
+
+/* No Alarms Message */
+.no-alarms {
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 20px;
+  text-align: center;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+/* Individual Alarm Item */
+.alarm-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.alarm-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+}
+
+.alarm-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.alarm-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.alarm-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.alarm-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-height: 36px;
+  min-width: 60px;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #ef5350, #f44336);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.alarm-status {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.alarm-status.active {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.alarm-status.triggered {
+  background: rgba(255, 193, 7, 0.2);
+  color: #FFC107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+/* Clear All Button */
+.clear-all-btn {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  font-size: 0.85rem;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.clear-all-btn:hover {
+  background: linear-gradient(135deg, #FFA726, #ff9800);
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+/* Responsive Design for Alarm Section */
+@media (max-width: 480px) {
+  .notification-section,
+  .set-alarm-section {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .alarm-inputs {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .alarm-inputs input {
+    min-width: 120px;
+    max-width: 200px;
+  }
+  
+  .alarm-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .alarm-actions {
+    justify-content: space-between;
+  }
+  
+  .alarms-list {
+    max-height: 250px;
+  }
+}
+
+@media (min-width: 768px) {
+  .set-alarm-section {
+    padding: 25px;
+  }
+  
+  .alarm-inputs {
+    gap: 12px;
+  }
+  
+  .alarm-item {
+    padding: 18px;
+  }
+  
+  .alarms-list {
+    max-height: 350px;
+  }
 }

@@ -30,16 +30,38 @@
     </div>
   </div>
 
+
   <!-- Alarm -->
   <div id="alarm" class="content">
     <div class="card">
       <h2>Alarm</h2>
-      <div>
-        <select id="alarmHour"></select> :
-        <select id="alarmMinute"></select>
+      
+      <!-- Permission Notification -->
+      <div id="notificationPermission" class="notification-section">
+        <p>Aktifkan notifikasi untuk menerima alarm di perangkat Anda</p>
+        <button id="enableNotifications" onclick="requestNotificationPermission()">Aktifkan Notifikasi</button>
+        <p id="permissionStatus" class="permission-status">Belum diizinkan</p>
       </div>
-      <button onclick="setAlarm()">Set Alarm</button>
-      <p id="alarmStatus">Belum ada alarm</p>
+
+      <!-- Set New Alarm -->
+      <div class="set-alarm-section">
+        <h3>Set Alarm Baru</h3>
+        <div class="alarm-inputs">
+          <select id="alarmHour"></select> :
+          <select id="alarmMinute"></select>
+          <input type="text" id="alarmLabel" placeholder="Label (opsional)" maxlength="30">
+        </div>
+        <button onclick="addAlarm()" class="add-alarm-btn">Tambah Alarm</button>
+      </div>
+
+      <!-- Active Alarms -->
+      <div class="active-alarms-section">
+        <h3>Alarm Aktif (<span id="alarmCount">0</span>)</h3>
+        <div id="activeAlarms" class="alarms-list">
+          <p class="no-alarms">Belum ada alarm aktif</p>
+        </div>
+        <button onclick="clearAllAlarms()" id="clearAllBtn" class="clear-all-btn" style="display: none;">Hapus Semua</button>
+      </div>
     </div>
   </div>
 
