@@ -35,7 +35,7 @@ clock-app/
 1. Clone atau download repositori:
    ```bash
    git clone https://github.com/fareldev-hub/clock-app.git
-````
+   ```
 
 2. Masuk ke folder proyek:
 
