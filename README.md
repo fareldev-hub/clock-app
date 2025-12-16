@@ -1,6 +1,4 @@
-Preview : https://fareldev-hub.github.io/clock-app/
-
-Clock App
+### Clock App
 
 Aplikasi web sederhana berbasis **HTML, CSS & JavaScript** dengan fitur-fitur berikut:
 
