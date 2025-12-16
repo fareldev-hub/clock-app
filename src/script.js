@@ -6,10 +6,18 @@ function showContent(id, event) {
   event.target.classList.add('active');
 }
 
+
 // Local Time
 function updateLocalTime() {
+  const timeElement = document.getElementById("localTime");
   const now = new Date();
-  document.getElementById("localTime").textContent = now.toLocaleTimeString();
+  const newTime = now.toLocaleTimeString();
+  
+  // Add update animation
+  timeElement.classList.add('updating');
+  setTimeout(() => timeElement.classList.remove('updating'), 600);
+  
+  timeElement.textContent = newTime;
   document.getElementById("timezone").textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
 }
 setInterval(updateLocalTime, 1000);
@@ -67,12 +75,19 @@ setInterval(() => {
 let stopwatchInterval;
 let elapsedTime = 0;
 
+
 function updateStopwatch() {
+  const timeElement = document.getElementById("stopwatchTime");
   let hrs = Math.floor(elapsedTime / 3600);
   let mins = Math.floor((elapsedTime % 3600) / 60);
   let secs = elapsedTime % 60;
-  document.getElementById("stopwatchTime").textContent =
-    `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+  const newTime = `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+  
+  // Add update animation
+  timeElement.classList.add('updating');
+  setTimeout(() => timeElement.classList.remove('updating'), 300);
+  
+  timeElement.textContent = newTime;
 }
 
 function startStopwatch() {
@@ -91,11 +106,18 @@ function resetStopwatch() {
   updateStopwatch();
 }
 
+
 // World Clock
 function updateWorldClock() {
+  const timeElement = document.getElementById("worldClock");
   const city = document.getElementById("citySelect").value;
   const now = new Date().toLocaleTimeString("en-US", { timeZone: city });
-  document.getElementById("worldClock").textContent = now;
+  
+  // Add update animation
+  timeElement.classList.add('updating');
+  setTimeout(() => timeElement.classList.remove('updating'), 600);
+  
+  timeElement.textContent = now;
 }
 setInterval(updateWorldClock, 1000);
 updateWorldClock();
